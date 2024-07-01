@@ -243,5 +243,4 @@ async OnSubmit(){debugger;
      this.imageListArray.splice(index,1);
    }
   }
-
 }
