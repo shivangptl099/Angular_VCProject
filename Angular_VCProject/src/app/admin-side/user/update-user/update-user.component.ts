@@ -27,6 +27,7 @@ export class UpdateUserComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       phoneNumber: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      address: ['', Validators.required],
       emailAddress: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
       confirmPassword: ['', Validators.required]
@@ -56,6 +57,10 @@ export class UpdateUserComponent implements OnInit {
   {
     return this.updateForm.get('phoneNumber') as FormControl;
   }
+  get address()
+  {
+    return this.updateForm.get('address') as FormControl;
+  }
   get emailAddress()
   {
     return this.updateForm.get('emailAddress') as FormControl;
@@ -79,6 +84,7 @@ export class UpdateUserComponent implements OnInit {
               firstName:[this.updateData.firstName,Validators.compose([Validators.required])],
               lastName:[this.updateData.lastName,Validators.compose([Validators.required])],
               phoneNumber:[this.updateData.phoneNumber,Validators.compose([Validators.required,Validators.minLength(10),Validators.maxLength(10)])],
+              address:[this.updateData.address,Validators.compose([Validators.required])],
               emailAddress:[this.updateData.emailAddress,Validators.compose([Validators.required,Validators.email])],
               password:[this.updateData.password,Validators.compose([Validators.required,Validators.minLength(5),Validators.maxLength(10)])],
               confirmPassword:[this.updateData.confirmPassword,Validators.compose([Validators.required])]
