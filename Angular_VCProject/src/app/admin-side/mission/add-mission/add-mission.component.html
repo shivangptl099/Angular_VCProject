@@ -13,7 +13,7 @@
                   <div class="row">
                     <div class="col-sm-6">
                         <label class="col-form-label">Country</label>
-                        <select class="form-select" (change)="CityList($event)" formControlName="countryId">
+                        <select class="form-select" aria-label="Status" (change)="CityList($event)" formControlName="countryId">
                           <option *ngFor="let item of countryList" value="{{item.value}}">  {{item.text}}</option>
                         </select>
                         <span class="text-danger" *ngIf="countryId.invalid && (countryId.touched || formValid)">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-sm-6">
                       <label class="col-form-label">City</label>
-                      <select class="form-select" formControlName="cityId">
+                      <select class="form-select" aria-label="Status" formControlName="cityId">
                         <option value="">Select City</option>
                         <option *ngFor="let item of cityList" value="{{item.value}}">{{item.text}}</option>
                       </select>
@@ -31,26 +31,22 @@
                       </span>
                     </div>
                   </div>
-                  
-                  <div class="row">
+                   <div class="row">
                     <div class="col-sm-6">
                       <label class="col-form-label">Mission Title</label>
-                      <input type="text" class="form-control" formControlName="missionTitle" placeholder="Enter mission title">
+                      <input type="text" class="form-control" placeholder="Enter Mission Title" formControlName="missionTitle">
                       <span class="text-danger" *ngIf="missionTitle.invalid && (missionTitle.touched || formValid)">
                         Please Enter Mission Title
                       </span>
                     </div>
                     <div class="col-sm-6">
                       <label class="col-form-label">Mission Theme</label>
-                      <select class="form-select" formControlName="missionThemeId">
-                        <option *ngFor="let item of missionThemeList" value="{{item.value}}">{{item.text}}</option>
-                      </select>
+                      <input type="text" class="form-control" placeholder="Enter Mission Theme" formControlName="missionThemeId">
                       <span class="text-danger" *ngIf="missionThemeId.invalid && (missionThemeId.touched || formValid)">
-                        Please Select Mission Theme
+                        Please Enter Mission Theme
                       </span>
-                      </div>
-                  </div>
-
+                    </div>
+                   </div>
                    <div class="row">
                     <div class="col-sm-6">
                       <label class="col-form-label">Mission Description</label>
@@ -99,7 +95,7 @@
                       </div>
                       <div class="col-sm-6">
                         <label class="col-form-label">Mission Skills</label>
-                        <select class="form-select skills" formControlName="missionSkillId" multiple="multiple">
+                        <select class="form-select skills" aria-label="Status" formControlName="missionSkillId" multiple="multiple">
                           <option *ngFor="let item of missionSkillList" value="{{item.value}}">{{item.text}}</option>
                         </select>
                         <span class="text-danger" *ngIf="missionSkillId.invalid && (missionSkillId.touched || formValid)">

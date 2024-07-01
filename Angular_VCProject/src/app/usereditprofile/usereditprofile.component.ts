@@ -406,4 +406,3 @@ export class UsereditprofileComponent implements OnInit {
     this.contactUsModal.hide();
   }
 }
-

@@ -13,7 +13,7 @@
                     <div class="row"><input type="hidden" formControlName="id">
                       <div class="col-sm-6">
                           <label class="col-form-label">Country</label>
-                          <select class="form-select" (change)="CityList($event)" formControlName="countryId">
+                          <select class="form-select" aria-label="Status" (change)="CityList($event)" formControlName="countryId">
                             <option *ngFor="let item of countryList" value="{{item.value}}">  {{item.text}}</option>
                           </select>
                           <span class="text-danger" *ngIf="countryId.invalid && (countryId.touched || formValid)">
@@ -22,7 +22,7 @@
                       </div>
                     <div class="col-sm-6">
                       <label class="col-form-label">City</label>
-                      <select class="form-select" formControlName="cityId">
+                      <select class="form-select" aria-label="Status" formControlName="cityId">
                         <option value="">Select City</option>
                         <option *ngFor="let item of cityList" value="{{item.value}}">{{item.text}}</option>
                       </select>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-sm-6">
                       <label class="col-form-label">Mission Theme</label>
-                      <select class="form-select" formControlName="missionThemeId">
+                      <select class="form-select" aria-label="Status" formControlName="missionThemeId">
                         <option *ngFor="let item of missionThemeList" value="{{item.value}}">{{item.text}}</option>
                       </select>
                       <span class="text-danger" *ngIf="missionThemeId.invalid && (missionThemeId.touched || formValid)">
@@ -57,7 +57,13 @@
                         Please Enter Mission Description
                       </span>
                     </div>
-            
+                    <div class="col-sm-6">
+                      <label class="col-form-label">Total Sheets</label>
+                      <input type="number" class="form-control" placeholder="Enter Total Sheets" formControlName="totalSheets">
+                      <!-- <span class="text-danger" *ngIf="totalSheets.invalid && (totalSheets.touched || formValid)">
+                        Please Enter Total Sheets
+                      </span> -->
+                    </div>
                    </div>
                    <div class="row">
                     <div class="col-sm-6">
@@ -92,7 +98,7 @@
                       </div>
                       <div class="col-sm-6">
                         <label class="col-form-label">Mission Skills</label>
-                        <select class="form-select skills" formControlName="missionSkillId" multiple="multiple">
+                        <select class="form-select skills" aria-label="Status" formControlName="missionSkillId" multiple="multiple">
                           <option *ngFor="let item of missionSkillList" value="{{item.value}}">{{item.text}}</option>
                         </select>
                         <span class="text-danger" *ngIf="missionSkillId.invalid && (missionSkillId.touched || formValid)">
@@ -103,7 +109,7 @@
                     <div class="row">
                       <div class="col-sm-1 pt-2" *ngFor="let items of imageListArray">
                         <img src="{{items}}" style="width:95px;max-width: 95px important;height:95px;max-height: 95px !important;" onerror="this.src='assets/NoImg.png'" alt="" class="img-thumbnail position-relative">
-                        <span style="position:relative;"><button class="btn btnremove btn-outline-secondary" (click)="OnRemoveImage(items)">x</button></span>
+                        <!-- <span style="position:relative;"><button class="btn btnremove btn-outline-secondary" (click)="OnRemoveImage(items)">x</button></span> -->
                       </div>
                     </div>
                 </div>
@@ -113,7 +119,6 @@
         <div class="row justify-content-end mt-4">
           <button class="btnCancel" (click)="OnCancel()" ><span class="cancel">Cancel</span></button>
           <button class="btnSave" (click)="OnSubmit()"><span class="save">Save</span></button>
-          <button class="btnremove" (click)="OnRemoveImage(1)"><span class="edit">Edit</span></button>
         </div>
      </div>
    </div>
