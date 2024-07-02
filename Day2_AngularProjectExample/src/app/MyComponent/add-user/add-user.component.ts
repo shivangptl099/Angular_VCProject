@@ -23,7 +23,6 @@ export class AddUserComponent implements OnInit {
       active: true
     }
     this.userAdd.emit(user);
-
   }
 
 }
