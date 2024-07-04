@@ -1,1 +1,77 @@
-<p>dashboard works!</p>
+<main>
+  <div>
+    <h1 style="margin: auto">ShivaXD Games</h1>
+    <h3 style="margin: auto; color: gray">Buy Games for a reasonable price</h3>
+  </div>
+  <hr />
+  
+  <h2 style="color: coral">Weekend Offers</h2>
+  <ul style="font-size: large">
+    <li style="padding-bottom: 5px">
+      <div class="card" (click)="addToCart('Grand Theft Auto V')">
+        <img src="https://imgs.search.brave.com/g6lg21yGw90wIiFfjn_dEnLTGPw2lkSuL-WM6JU-sXA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5hcGkucGxheXN0/YXRpb24uY29tL2Nk/bi9FUDEwMDQvQ1VT/QTAwNDExXzAwL2VY/c1dsUDBFa2NWa0xQ/SGdVNHBqZmxtZzA3/MjUyeVU4LnBuZw" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h5><b>Grand Theft Auto V</b></h5> 
+        </div>
+      </div>
+    </li>
+    <li style="padding-bottom: 5px">
+      <div class="card" (click)="addToCart('Assassin\'s Creed: Mirage')">
+        <img src="https://imgs.search.brave.com/BzqL2uHMmjbS_Upq2WfPsBcGj2BIDqiwCQcDbR1N4pg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z2VtYXRzdS5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjIv/MDkvQXNzYXNzaW5z/LUNyZWVkLU1pcmFn/ZV8yMDIyXzA5LTEw/LTIyXzAxOC0zMjB4/Mzk5LmpwZw" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h5><b>Assassin's Creed: Mirage</b></h5> 
+        </div>
+      </div>
+    </li>
+    <li style="padding-bottom: 5px">
+      <div class="card" (click)="addToCart('God of War: Ragnarok')">
+        <img src="https://imgs.search.brave.com/KaNcsC4uCZ_b8gLFfYTfjv3wOwMOgTm-e7fNoNxYhmU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5qZXV4dmlkZW8u/Y29tL21lZGlhcy1z/bS8xNzE3MTEvMTcx/NzEwOTc5NS0yNzkw/LWphcXVldHRlLWF2/YW50LmpwZw" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h5><b>God of War: Ragnarok</b></h5> 
+        </div>
+      </div>
+    </li>
+    <li style="padding-bottom: 5px">
+      <div class="card" (click)="addToCart('Elden Ring')">
+        <img src="https://imgs.search.brave.com/QB_ytCXCxnq10ascGZG6lqZsQqTvGkk-vUUJef2j8XI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy1rMGhq/bzJ5eXJxL2ltYWdl/cy9zdGVuY2lsLzUw/MHg2NTkvcHJvZHVj/dHMvMTEwNi84NjMv/RWxkZW5fUmluZ19T/dGFuZGFyZF9FZGl0/aW9uX1BhY2tzaG90/X183MzkwMS4xNjg5/MjQxMTE0LmpwZz9j/PTE" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h5><b>Elden Ring with Erdtree DLC</b></h5> 
+        </div>
+      </div>
+    </li>
+    <li style="padding-bottom: 5px">
+      <div class="card" (click)="addToCart('Ghost of Tsushima')">
+        <img src="https://imgs.search.brave.com/mgWR_Rtc0hfMy2vlc_kYHJNJ8tWhoifEhDy9QvIF-hg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMtcHJkLmlnbmlt/Z3MuY29tLzIwMjQv/MDQvMDIvZ2hvc3Qt/b2YtdHN1c2hpbWEt/YnV0dG9uLXJlcGxh/Y2VtZW50LTE3MTIw/Njg2NjM3MzcuanBn/P3dpZHRoPTMwMCZj/cm9wPTE6MSxzbWFy/dCZhdXRvPXdlYnA" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h5><b>Ghost of Tsushima</b></h5> 
+        </div>
+      </div>
+    </li>
+    <li style="padding-bottom: 5px">
+      <div class="card" (click)="addToCart('Ghost of Tsushima')">
+        <img src="https://imgs.search.brave.com/ZquzHu3oBj7dMBUPU-N0RkhWMZhvI-NjMgroh1fF8Tw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bWFydmVsLmNvbS9j/b250ZW50LzF4L21h/cnZlbHNzcGlkZXJt/YW4yX2xvYl9jcmRf/MDIuanBn" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h5><b>Marvel's Spiderman</b></h5> 
+        </div>
+      </div>
+    </li>
+  </ul>
+  
+  <hr />
+  
+  <h2 style="color: coral">Cart</h2>
+  <div id="cart">
+    <ul>
+      <li *ngFor="let item of cart">
+        {{ item }} <button (click)="removeFromCart(item)" id="removeBtn" type="button" class="btn btn-danger">-</button>
+      </li>
+    </ul>
+  </div>
+  
+  <hr />
+  
+  <div style="display: flex; justify-content: center">
+    <button type="button" (click)="placeOrder()" class="btn btn-dark">Place Order</button>
+  </div>
+
+</main>
