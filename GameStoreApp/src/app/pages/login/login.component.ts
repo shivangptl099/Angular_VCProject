@@ -1,13 +1,12 @@
 import { Component, Inject, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { DashboardComponent } from '../dashboard/dashboard.component';
-
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, RouterLink, RouterOutlet],
+  imports: [FormsModule, RouterLink, RouterOutlet, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -47,6 +46,7 @@ export class LoginComponent {
     alert("Registeration Successful");
     this.router.navigateByUrl('dashboard')
   }
+
   onLogin(){
     const isLocalData = localStorage.getItem('storageLocal');
     if(isLocalData != null){
@@ -54,6 +54,7 @@ export class LoginComponent {
       const isUserFound = users.find((m:any) => m.userName == this.userLogin.userName && m.password == this.userLogin.password)
       if(isUserFound != undefined) {
         this.router.navigateByUrl('dashboard')
+        alert("Login Succcessful")
       } else {
         alert("User name or password is Wrong")
       }
@@ -61,4 +62,15 @@ export class LoginComponent {
       alert("No User Found");
     }
   }
+
+  loginForm: FormGroup = new FormGroup({
+    userName_l: new FormControl("", [Validators.required, Validators.minLength(4)]),
+    password_l: new FormControl("", [Validators.required, Validators.minLength(6)])
+  });
+
+  registerForm: FormGroup = new FormGroup({
+    userName_r: new FormControl("", [Validators.required, Validators.minLength(4)]),
+    emailId_r: new FormControl("", [Validators.email]),
+    password_r: new FormControl("", [Validators.required, Validators.minLength(6)])
+  });
 }
